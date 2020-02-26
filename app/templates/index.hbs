@@ -1,0 +1,21 @@
+<div>
+  <label>Param One</label>
+  <select onchange={{action "selectParamOne" value="target.value"}}>
+    <option value="" selected={{eq null this.selectedParamOne}}>Please Select</option>
+    {{#each this.paramOneOptions as |param|}}
+      <option value={{param.id}} selected={{eq param.id this.selectedParamOne.id}}>{{param.text}}</option>
+    {{/each}}
+  </select>
+  <p>{{this.selectedParamOne.text}}</p>
+</div>
+
+<div>
+  <label>Param Two</label>
+  <select onchange={{action "selectParamTwo" value="target.value"}}>
+    <option value="" selected={{eq null this.selectedParamTwo}}>Please Select</option>
+    {{#each this.paramTwoOptions as |param|}}
+      <option value={{param.id}} selected={{eq param.id this.selectedParamTwo.id}}>{{param.text}}</option>
+    {{/each}}
+  </select>
+  <p>{{this.selectedParamTwo.text}}</p>
+</div>
